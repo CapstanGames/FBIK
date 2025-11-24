@@ -9,9 +9,9 @@
 #include "BonePose.h"
 #include "FBIKTypes.h"
 #include "BoneControllers/AnimNode_SkeletalControlBase.h"
-#include "PBIK_Shared.h"
-#include "RigUnit_PBIK.h"
-#include "Core/PBIKSolver.h"
+#include "AhoyPBIK_Shared.h"
+#include "AhoyRigUnit_PBIK.h"
+#include "Core/AhoyPBIKSolver.h"
 #include "Misc/HashBuilder.h"
 #include "AnimNode_FBIK.generated.h"
 
@@ -41,7 +41,7 @@ struct FBIK_API FAnimNode_FBIK : public FAnimNode_SkeletalControlBase
 
 	/** Global solver settings. */
 	UPROPERTY(EditAnywhere, Category=Solver, meta=(PinHiddenByDefault))
-	FPBIKSolverSettings Settings;
+	FAhoyPBIKSolverSettings Settings;
 
 	FAnimNode_FBIK();
 
@@ -51,7 +51,7 @@ struct FBIK_API FAnimNode_FBIK : public FAnimNode_SkeletalControlBase
 	virtual void InitializeBoneReferences(const FBoneContainer& RequiredBones) override;
 
 private:
-	FPBIKWorkData WorkData;
+	FAhoyPBIKWorkData WorkData;
 	TArray<FCompactPoseBoneIndex> SolverBoneToPoseIndex;
 	TArray<int32> EffectorSolverIndices;
 
