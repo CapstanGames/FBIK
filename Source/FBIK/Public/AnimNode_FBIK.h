@@ -46,6 +46,8 @@ struct FBIK_API FAnimNode_FBIK : public FAnimNode_SkeletalControlBase
 	FAnimNode_FBIK();
 
 	virtual void Initialize_AnyThread(const FAnimationInitializeContext& Context) override;
+	
+protected:
 	virtual void EvaluateSkeletalControl_AnyThread(FComponentSpacePoseContext& Output, TArray<FBoneTransform>& OutBoneTransforms) override;
 	virtual bool IsValidToEvaluate(const USkeleton* Skeleton, const FBoneContainer& RequiredBones) override;
 	virtual void InitializeBoneReferences(const FBoneContainer& RequiredBones) override;
